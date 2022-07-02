@@ -98,7 +98,6 @@ class AsyncWebSocketTestSession(starlette_WebSocketTestSession):
             await self.send({"type": "websocket.receive", "bytes": text.encode("utf-8")})
 
     async def receive(self) -> Message:
-        print('receving 22')
         message = await self._send_queue.get()
         if isinstance(message, BaseException):
             raise message
