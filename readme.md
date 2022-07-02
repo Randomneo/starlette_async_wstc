@@ -1,4 +1,4 @@
-[![pyconfiger](https://circleci.com/gh/Randomneo/pyconfiger.svg?style=svg)](https://circleci.com/gh/Randomneo/pyconfiger)
+[![pyconfiger](https://circleci.com/gh/Randomneo/starlette_async_wstc.svg?style=svg)](https://circleci.com/gh/Randomneo/starlette_async_wstc)
 
 [![PyPI version](https://badge.fury.io/py/starlette_async_wstc.svg)](https://badge.fury.io/py/starlette_async_wstc)
 
