@@ -83,6 +83,12 @@ class AsyncWebSocketTestSession(starlette_WebSocketTestSession):
     async def send(self, message: Message) -> None:
         await self._receive_queue.put(message)
 
+    async def send_text(self, data: str) -> None:
+        await self.send({"type": "websocket.receive", "text": data})
+
+    async def send_bytes(self, data: bytes) -> None:
+        await self.send({"type": "websocket.receive", "bytes": data})
+
     async def send_json(self, data: typing.Any, mode: str = "text") -> None:
         assert mode in ["text", "binary"]
         text = json.dumps(data)
@@ -98,6 +104,16 @@ class AsyncWebSocketTestSession(starlette_WebSocketTestSession):
             raise message
         return message
 
+    async def receive_text(self) -> str:
+        message = await self.receive()
+        self._raise_on_close(message)
+        return message["text"]
+
+    async def receive_bytes(self) -> bytes:
+        message = await self.receive()
+        self._raise_on_close(message)
+        return message["bytes"]
+
     async def receive_json(self, mode: str = "text") -> typing.Any:
         assert mode in ["text", "binary"]
         message = await self.receive()
@@ -112,7 +128,7 @@ class AsyncWebSocketTestSession(starlette_WebSocketTestSession):
         await self.send({"type": "websocket.disconnect", "code": code})
 
 
-class _ASGIAdapter(starlette_ASGIAdapter):
+class _ASGIAdapter(starlette_ASGIAdapter):   # pragma: no cover
     websocket_session_factory = AsyncWebSocketTestSession
 
     def __init__(self, *args, **kwargs):
@@ -291,7 +307,7 @@ class _ASGIAdapter(starlette_ASGIAdapter):
         return response
 
 
-class TestClient(starlette_TestClient):
+class TestClient(starlette_TestClient):    # pragma: no cover
     def __init__(
             self,
             app: typing.Union[ASGI2App, ASGI3App],

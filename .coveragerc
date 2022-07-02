@@ -1,0 +1,21 @@
+[run]
+omit =
+    conftest.py
+    tests/*
+
+[report]
+show_missing = True
+skip_covered = True
+skip_empty = True
+exclude_lines =
+    pragma: no cover
+    def __repr__
+    def pprint
+    @abstractmethod
+    if self.debug:
+    if settings.DEBUG
+    raise AssertionError
+    raise NotImplementedError
+    if 0:
+    if __name__ == .__main__.:
+    pass

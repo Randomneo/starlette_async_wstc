@@ -1,8 +1,4 @@
-[![starlette_async_wstc](https://circleci.com/gh/Randomneo/starlette_async_wstc.svg?style=svg)](https://circleci.com/gh/Randomneo/starlette_async_wstc)
-
 [![PyPI version](https://badge.fury.io/py/starlette_async_wstc.svg)](https://badge.fury.io/py/starlette_async_wstc)
-
-[![Coverage Status](https://coveralls.io/repos/github/Randomneo/starlette_async_wstc/badge.svg?branch=master)](https://coveralls.io/github/Randomneo/starlette_async_wstc?branch=master)
 
 
 # Description
