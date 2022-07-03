@@ -1,5 +1,6 @@
 [![PyPI version](https://badge.fury.io/py/starlette_async_wstc.svg)](https://badge.fury.io/py/starlette_async_wstc)
 
+# Starlette Async WebSocket Test Client
 
 # Description
 

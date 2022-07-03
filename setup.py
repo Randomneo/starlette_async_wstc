@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='starlette_async_wstc',
-    version='0.1.0',
+    version='0.1.2',
     packages=['starlette_async_wstc'],
     author='Rostyslav Misiura',
     author_email='rostislav9999@gmail.com',
